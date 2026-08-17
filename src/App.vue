@@ -8,10 +8,6 @@
 body {
   margin: 0;
 }
-#app {
-  display: block;
-  width: 100%;
-}
 .page {
   width: 100%;
 }

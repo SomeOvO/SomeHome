@@ -6,34 +6,43 @@ import SoundControl from './SoundControl.vue'
 const Dom = useTemplateRef('TopBar')
 const DomCover = useTemplateRef('TopBarCover')
 const Ani = () => {
-  const tl = gsap.timeline()
+  const tl = gsap.timeline({ paused: true })
   tl.add(
     gsap.to(DomCover.value, {
       width: '100%',
+      duration: 0.5,
+      delay: 0,
     }),
   )
   tl.add(
     gsap.to(Dom.value, {
       width: '100%',
+      duration: 0.5,
     }),
+    '>',
   )
   tl.add(
     gsap.to(Dom.value, {
       backgroundColor: '#fff',
       padding: '0.5rem',
       height: '2.5rem',
+      duration: 0.7,
     }),
+    '>',
   )
   tl.add(
     gsap.to(DomCover.value, {
       height: 0,
     }),
+    '>',
   )
   tl.add(
     gsap.to(Dom.value?.getElementsByClassName('Contents')[0]!, {
       opacity: 1,
     }),
+    '<',
   )
+  tl.play()
 }
 onMounted(() => {
   Ani()
@@ -76,7 +85,7 @@ onMounted(() => {
   height: var(--height);
   right: 0;
   top: 0;
-  background-color: #020202;
+  background-color: #2e2e2e;
   z-index: 1;
   position: relative;
 }

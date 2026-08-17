@@ -1,19 +1,18 @@
 <script lang="ts" setup>
-import IndexBanner from '@/components/IndexBanner.vue'
-import IndexLinks from '@/components/IndexLinks.vue'
+import IndexBanner from '@/Page/Index/IndexBanner.vue'
+import IndexAbout from '@/Page/Index/About/IndexAboutMe.vue'
 import TopBar from '@/components/TopBar.vue'
 </script>
 <template>
   <TopBar />
   <div class="page index">
     <IndexBanner />
-    <IndexLinks />
+    <IndexAbout />
   </div>
 </template>
 <style scoped>
 .index {
   display: flex;
-  width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;

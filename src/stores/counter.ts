@@ -5,6 +5,9 @@ const KillAudio = (Audio: HTMLAudioElement) => {
   Audio.src = ''
   Audio.load()
 }
+
+const AudioC: HTMLAudioElement[] = []
+
 export const useCounterStore = defineStore('counter', () => {
   const GetLocalSoundStat = localStorage.getItem('sound')
   const sound = ref<boolean>()
@@ -20,11 +23,14 @@ export const useCounterStore = defineStore('counter', () => {
     } else {
       localStorage.setItem('sound', 'ovo')
       sound.value = false
-      PublicPlay('')
+      AudioC.map((v) => {
+        v.pause()
+        v.src = ''
+      })
     }
   }
 
-  const CreateAudioPipe = (MaxNum: number) => {
+  const CreateAudioPipe = (MaxNum: number, Speed?: number) => {
     const Audios = [] as HTMLAudioElement[]
     return function (Src: string) {
       if (Src === '') {
@@ -42,10 +48,15 @@ export const useCounterStore = defineStore('counter', () => {
       const NewAudio = new Audio(Src)
       Audios.push(NewAudio)
       NewAudio.volume = 0.5
+      if (Speed) {
+        NewAudio.playbackRate = Speed
+      }
+      AudioC.push(NewAudio)
+      console.log(Audios)
       NewAudio.play()
     }
   }
   const PublicPlay = CreateAudioPipe(3)
 
-  return { SoundControl, sound, PublicPlay }
+  return { SoundControl, sound, PublicPlay, CreateAudioPipe }
 })

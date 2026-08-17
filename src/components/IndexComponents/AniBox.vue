@@ -188,6 +188,7 @@ const MouseDown = () => {
 
 const MouseUp = () => {
   gsap.to(dom.value, {
+    duration: 0.3,
     scale: 1,
   })
 }
@@ -198,9 +199,12 @@ const MouseUp = () => {
     class="AnimationBox"
     @mousemove="BoxMove"
     @touchmove="BoxMove"
+    @mousedown="MouseDown"
+    @mouseup="MouseUp"
+    @mouseleave="MouseUp"
     :style="{ '--size': prop.Size + 'dvw', '--font': prop.Size - 1 + 'dvw' }"
   >
-    <div class="cubeBox" ref="Dom" @mousedown="MouseDown" @mouseup="MouseUp" @mouseleave="MouseUp">
+    <div class="cubeBox" ref="Dom">
       <div class="bottom wall" :class="bglist[0]">
         <span>{{ Words[0] }}</span>
       </div>
@@ -284,7 +288,7 @@ const MouseUp = () => {
   }
 }
 .bg {
-  background-color: #fff;
+  background-color: #ffffffe8;
 }
 .bg1 {
   background-color: #b9ffbd;

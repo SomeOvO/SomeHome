@@ -1,4 +1,4 @@
-import PageIndex from '@/Page/PageIndex.vue'
+import PageIndex from '@/Page/Index/PageIndex.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({

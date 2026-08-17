@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { RandomWords } from './constants.ts'
-import AniTitle from './IndexComponents/AniTitle.vue'
+import AniTitle from '@/components/IndexComponents/AniTitle.vue'
+import { RandomWords } from '../../components/constants.ts'
 
 const words = RandomWords
 </script>

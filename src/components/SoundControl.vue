@@ -9,13 +9,13 @@ console.log(counter.sound)
     <img
       src="/icon/soundclose.svg"
       alt=""
-      v-if="!counter.sound"
+      v-show="!counter.sound"
       @click="counter.SoundControl(true)"
     />
     <img
       src="/icon/soundopen.svg"
       alt=""
-      v-if="counter.sound"
+      v-show="counter.sound"
       @click="counter.SoundControl(false)"
     />
   </div>

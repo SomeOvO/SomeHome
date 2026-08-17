@@ -40,13 +40,6 @@ const Ani1 = () => {
     }),
     '>',
   )
-
-  tl.add(
-    gsap.to(dom.value, {
-      translateY: 0,
-    }),
-    '-=0.1',
-  )
   tl.add(
     gsap.to('.Englist', {
       gap: '0.5rem',
@@ -80,14 +73,15 @@ const Ani1 = () => {
   z-index: 0;
 }
 .PublicTitle {
-  width: 100%;
+  width: fit-content;
   overflow: hidden;
   display: flex;
   position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transform: translateY(5rem);
+  height: fit-content;
+  box-sizing: border-box;
   h1 {
     margin: 0;
     z-index: 1;
@@ -96,7 +90,8 @@ const Ani1 = () => {
   .Englist {
     display: flex;
     z-index: 1;
-    gap: 5rem;
+    gap: 2rem;
+    box-sizing: border-box;
     span {
       z-index: 1;
       font-size: 100%;
