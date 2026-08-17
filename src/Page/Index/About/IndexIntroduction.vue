@@ -8,13 +8,28 @@ const counter = useCounterStore()
 const play = counter.CreateAudioPipe(1, 1.5)
 const Dom = useTemplateRef('China')
 const Click = () => {
-  gsap.to(Dom.value, {
-    translateY: '-1000dvh',
-    duration: 100,
-  })
   gsap.set(Dom.value, {
     '--view': 'unset',
   })
+  const tl = gsap.timeline()
+  tl.add(
+    gsap.to(Dom.value, {
+      translateY: '-100dvh',
+      yoyo: true,
+      repeat: -1,
+      duration: 1,
+    }),
+  )
+  tl.add(
+    gsap.to(Dom.value, {
+      translateX: '-50dvw',
+      yoyo: true,
+      repeat: -1,
+      duration: 10,
+    }),
+    '<',
+  )
+
   play('/Audio/music/Chinese.mp3')
 }
 </script>
