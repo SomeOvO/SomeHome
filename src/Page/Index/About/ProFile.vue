@@ -17,5 +17,6 @@ import JustAvatar from './JustAvatar.vue'
   width: 100%;
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 </style>

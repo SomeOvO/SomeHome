@@ -30,13 +30,13 @@ const Ani1 = () => {
   )
   tl.add(
     gsap.to(DomCover.value, {
-      top: '99%',
+      height: '1%',
     }),
     '<',
   )
   tl.add(
     gsap.to(DomCover.value, {
-      left: '100%',
+      width: 0,
     }),
     '>',
   )
@@ -52,7 +52,7 @@ const Ani1 = () => {
 </script>
 <template>
   <div class="PublicTitle" ref="PublicTitle" :style="{ '--text': '#fff' }">
-    <div class="cover" ref="Cover"></div>
+    <div class="cover" ref="Cover" unselectable="off"></div>
     <h1>{{ prop.Title }}</h1>
     <div class="Englist">
       <span v-for="(v, i) in EnglishArr" :key="i">{{ v }}</span>
@@ -67,20 +67,22 @@ const Ani1 = () => {
   width: 100%;
   height: 100%;
   position: absolute;
-  left: 0;
-  top: 0;
+  bottom: 0;
+  align-self: center;
+  justify-self: center;
   background-color: #000;
   z-index: 0;
 }
 .PublicTitle {
+  gap: 0.1rem;
   width: fit-content;
-  overflow: hidden;
   display: flex;
   position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: fit-content;
+  padding: 0.2rem;
   box-sizing: border-box;
   h1 {
     margin: 0;

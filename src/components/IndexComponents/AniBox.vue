@@ -171,7 +171,7 @@ function Suffer() {
 
 const counter = useCounterStore()
 const play = counter.PublicPlay
-const MouseDown = () => {
+const Meme = () => {
   if (!aniOver.value) {
     return
   }
@@ -180,6 +180,12 @@ const MouseDown = () => {
     const RandNum = Math.floor(Math.random() * memes.length)
     play('/Audio/memes/' + (memes[RandNum] ?? 'ciallo.mp3'))
   }
+}
+const MouseDown = () => {
+  if (!aniOver.value) {
+    return
+  }
+  Meme()
   gsap.to(dom.value, {
     scale: 0.5,
     duration: 0.3,

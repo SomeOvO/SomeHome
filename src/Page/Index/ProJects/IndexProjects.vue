@@ -1,22 +1,22 @@
 <script lang="ts" setup>
 import PublicTitle from '@/components/PublicComponenets/PublicTitle.vue'
-import ProFile from './ProFile.vue'
+import ProjectList from './ProjectList.vue'
 </script>
+
 <template>
-  <div class="IndexAbout" id="Links">
-    <PublicTitle -title="关于我" -english="AboutME" -desc='"U29tZU92T+WIsOatpOS4gOa4uAo="' />
-    <ProFile />
+  <div class="IndexProjects">
+    <PublicTitle :-title="'我的项目'" :-desc="'见笑了'" -english="ProJects" />
+    <ProjectList />
   </div>
 </template>
 
 <style scoped>
-.IndexAbout {
+.IndexProjects {
   display: flex;
-  justify-content: center;
+  flex: 1;
+  align-self: stretch;
   align-items: center;
   flex-direction: column;
   box-shadow: #000 0 0 2px;
-  flex: 1;
-  border-radius: 7px;
 }
 </style>

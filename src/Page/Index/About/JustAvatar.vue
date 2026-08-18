@@ -47,26 +47,26 @@ const Ani = () => {
 
 <style scoped>
 .Cover {
-  width: fit-content;
+  width: 20rem;
   position: relative;
+  overflow: hidden;
   box-shadow: #707070 0 0 3px;
   background-color: #747474;
   height: fit-content;
   display: flex;
-  overflow: hidden;
 }
 .Cover::after {
   position: absolute;
   content: '';
   left: 0;
+  width: var(--width);
   top: 0;
   height: 100%;
-  width: var(--width);
   background-color: #050505;
   box-shadow: #fff 0 0 8px;
 }
 img {
-  width: 20rem;
+  width: 100%;
   position: relative;
 }
 </style>

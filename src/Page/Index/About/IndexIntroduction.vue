@@ -2,6 +2,7 @@
 import { useCounterStore } from '@/stores/counter'
 import gsap from 'gsap'
 import { useTemplateRef } from 'vue'
+import IndexSkill from './IndexSkill.vue'
 
 const counter = useCounterStore()
 
@@ -32,19 +33,44 @@ const Click = () => {
 
   play('/Audio/music/Chinese.mp3')
 }
+
+const time = new Date()
 </script>
 
 <template>
   <div class="IndexIntroduction">
     <h1>SomeOvO</h1>
-    <div class="Text">
-      <span class="Chinese" @click="Click" ref="China" :style="{ '--view': 'none' }">中国人</span>
-      <p>一枚哦</p>
+    <div class="speical">
+      <span class="Chinese" @click="Click" ref="China" :style="{ '--view': 'none' }">中国人</span
+      ><span>一枚哦</span>
     </div>
+    <div class="Text">
+      <div class="infos">
+        <span>{{ time.getFullYear() - 2007 }}</span> <span>苏州</span> <span>学生</span>
+      </div>
+      <p>总要说些什么吧，毕竟这是我自己的地方.</p>
+    </div>
+    <IndexSkill />
   </div>
 </template>
 
 <style scoped>
+.speical {
+  display: flex;
+}
+.IndexIntroduction {
+  padding: 0.5rem;
+  align-self: flex-start;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 21rem;
+  h1 {
+    opacity: 0.8;
+    margin: 0;
+  }
+}
 .Chinese {
   display: block;
   position: relative;
@@ -53,8 +79,11 @@ const Click = () => {
   width: fit-content;
 }
 .Text {
+  margin: 1rem 0;
+  flex-direction: column;
   display: flex;
   p {
+    font-weight: bold;
     margin: 0;
   }
 }
