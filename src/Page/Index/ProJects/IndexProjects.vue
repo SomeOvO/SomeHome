@@ -4,8 +4,8 @@ import ProjectList from './ProjectList.vue'
 </script>
 
 <template>
-  <div class="IndexProjects">
-    <PublicTitle :-title="'我的项目'" :-desc="'见笑了'" -english="ProJects" />
+  <div class="IndexProjects Model">
+    <PublicTitle :-title="'我的项目'" :-desc="'没几个因为我很懒不知道写什么'" -english="ProJects" />
     <ProjectList />
   </div>
 </template>
@@ -13,10 +13,8 @@ import ProjectList from './ProjectList.vue'
 <style scoped>
 .IndexProjects {
   display: flex;
-  flex: 1;
   align-self: stretch;
   align-items: center;
   flex-direction: column;
-  box-shadow: #000 0 0 2px;
 }
 </style>

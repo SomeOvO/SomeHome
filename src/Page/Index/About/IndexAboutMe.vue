@@ -3,7 +3,7 @@ import PublicTitle from '@/components/PublicComponenets/PublicTitle.vue'
 import ProFile from './ProFile.vue'
 </script>
 <template>
-  <div class="IndexAbout" id="Links">
+  <div class="IndexAbout Model" id="Links">
     <PublicTitle -title="关于我" -english="AboutME" -desc='"U29tZU92T+WIsOatpOS4gOa4uAo="' />
     <ProFile />
   </div>
@@ -15,8 +15,5 @@ import ProFile from './ProFile.vue'
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  box-shadow: #000 0 0 2px;
-  flex: 1;
-  border-radius: 7px;
 }
 </style>

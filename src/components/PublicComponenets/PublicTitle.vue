@@ -20,6 +20,7 @@ async function Load() {
   Ani1().delay(1).play()
 }
 const DomCover = useTemplateRef('Cover')
+const EnglishDom = useTemplateRef('English')
 const Ani1 = () => {
   const tl = gsap.timeline({ paused: true })
   tl.add(
@@ -41,12 +42,17 @@ const Ani1 = () => {
     '>',
   )
   tl.add(
-    gsap.to('.Englist', {
+    gsap.to(EnglishDom.value, {
       gap: '0.5rem',
     }),
     '<',
   )
-
+  tl.add(
+    gsap.to(dom.value, {
+      translateY: '0',
+    }),
+    '<',
+  )
   return tl
 }
 </script>
@@ -54,7 +60,7 @@ const Ani1 = () => {
   <div class="PublicTitle" ref="PublicTitle" :style="{ '--text': '#fff' }">
     <div class="cover" ref="Cover" unselectable="off"></div>
     <h1>{{ prop.Title }}</h1>
-    <div class="Englist">
+    <div class="Englist" ref="English">
       <span v-for="(v, i) in EnglishArr" :key="i">{{ v }}</span>
     </div>
     <div class="desc">
@@ -74,6 +80,7 @@ const Ani1 = () => {
   z-index: 0;
 }
 .PublicTitle {
+  transform: translateY(20px);
   gap: 0.1rem;
   width: fit-content;
   display: flex;
@@ -106,7 +113,7 @@ const Ani1 = () => {
     p {
       color: var(--text);
       margin: 0;
-      font-size: 60%;
+      font-size: 100%;
     }
   }
 }
