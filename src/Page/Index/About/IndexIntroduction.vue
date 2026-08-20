@@ -85,6 +85,7 @@ const time = new Date()
   p {
     font-weight: bold;
     margin: 0;
+    white-space: normal;
   }
 }
 .Chinese::after {

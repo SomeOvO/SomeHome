@@ -61,6 +61,8 @@ onMounted(() => {
 
 <style scoped>
 .Skills {
+  padding: 1rem;
+  box-sizing: border-box;
   overflow: hidden;
   display: flex;
   gap: 0.5rem;

@@ -19,7 +19,7 @@ function Ani() {
   tl.add(
     gsap.to(rootDom.value, {
       duration: 1,
-      boxShadow: '#999999 3px 3px 3px inset,#999999 -1px -1px 1px inset',
+      backgroundColor: '#fdfdfd',
     }),
     '>',
   )
@@ -67,7 +67,7 @@ const tips = () => {
       <a v-if="Data.github" :title="Data.github" :href="Data.github" target="_blank">Github</a>
     </div>
     <div class="Gayhub">
-      <img src="/icon/github-fill.svg" alt="" />
+      <img src="/icon/github-fill.svg" style="user-select: none" draggable="false" alt="" />
     </div>
   </div>
 </template>
@@ -76,7 +76,7 @@ const tips = () => {
 .Cover {
   pointer-events: none;
   z-index: 5;
-  background-color: #f3f3f3;
+  background-color: #fdfdfd;
   position: absolute;
   left: 0;
   top: 0;
@@ -89,6 +89,8 @@ h2 {
 }
 p {
   margin: 0;
+  position: relative;
+  z-index: 2;
   overflow: hidden;
   white-space: pre;
   text-overflow: ellipsis;
@@ -100,8 +102,11 @@ p {
   img {
     transform: translateY(1px);
     width: 1rem;
+    user-select: none;
   }
   i {
+    margin-left: 0.2rem;
+    font-weight: bold;
     margin-right: 1rem;
   }
 }
@@ -124,6 +129,8 @@ p {
   }
 }
 .notload {
+  position: relative;
+  z-index: 2;
   cursor: pointer;
   display: flex;
 }
@@ -137,7 +144,11 @@ p {
   opacity: 0.1;
   right: 0;
   overflow: hidden;
+  z-index: -1;
+  z-index: 0;
   img {
+    pointer-events: none;
+
     height: 100%;
   }
 }
@@ -150,6 +161,6 @@ p {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  box-shadow: #000 0 0 0px;
+  background-color: #fff;
 }
 </style>

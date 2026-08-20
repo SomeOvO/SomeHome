@@ -36,7 +36,7 @@ const Projects = reactive([
 
 onMounted(() => {
   Projects.forEach(async (v) => {
-    const data = await fetch('https://api.github.scom/repos/' + v.repo).catch((e) => {
+    const data = await fetch('https://api.github.com/repos/' + v.repo).catch((e) => {
       return e
     })
     if (data.status != 200) {
@@ -52,18 +52,9 @@ onMounted(() => {
     v.loaded = true
   })
 })
-
-// const Tip = () => {
-//   alert('无法连接至Github服务器，请检查您的网络链接')
-// }
-
-//单个Project可以拆分为一个组件，下一次再做吧
 </script>
 <template>
   <div class="ProjectList">
-    <!-- <div class="Project" v-for="(v, i) in Projects" :key="i">
-
-    </div> -->
     <ProjectCard v-for="(v, i) in Projects" :-data="v" :key="i" />
   </div>
 </template>

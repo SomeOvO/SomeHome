@@ -85,7 +85,7 @@ onMounted(() => {
   height: var(--height);
   right: 0;
   top: 0;
-  background-color: #2e2e2e;
+  background-color: #000000;
   z-index: 1;
   position: relative;
 }
@@ -93,7 +93,7 @@ onMounted(() => {
   z-index: 2;
   top: 0;
   left: 0;
-  background-color: #bdbdbd;
+  background-color: #f1f1f1;
   width: 0;
   height: var(--height);
   box-sizing: border-box;

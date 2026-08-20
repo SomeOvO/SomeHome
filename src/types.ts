@@ -8,3 +8,10 @@ export interface Project {
   fork: string | number
   github: string
 }
+export interface Contact {
+  icon: string
+  name: string
+  info: string
+  bc: string
+  url: string
+}
