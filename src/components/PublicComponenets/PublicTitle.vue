@@ -96,7 +96,6 @@ async function Load() {
   gap: 0.1rem;
   margin: 1rem;
   width: fit-content;
-
   display: flex;
   position: relative;
   flex-direction: column;

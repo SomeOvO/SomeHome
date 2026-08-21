@@ -10,6 +10,7 @@ body {
   margin: 0;
 }
 .page {
+  overflow: hidden;
   width: 100%;
 }
 .Model {

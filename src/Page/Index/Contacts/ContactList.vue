@@ -49,7 +49,6 @@ const Ani = () => {
       behavior: 'smooth',
     })
   }, 1000)
-
   setTimeout(() => {
     dom.value?.scrollTo({
       left: dom.value!.scrollWidth / 3,
@@ -57,7 +56,15 @@ const Ani = () => {
     })
   }, 2000)
 }
-
+let r = dom.value?.scrollLeft ?? 0
+function WhEvent(el: WheelEvent) {
+  el.preventDefault()
+  dom.value!.scrollTo({
+    left: r + el.deltaY * 3,
+    behavior: 'smooth',
+  })
+  r += el.deltaY * 3
+}
 onMounted(() => {
   const ob = new IntersectionObserver(
     (v) => {
@@ -71,6 +78,19 @@ onMounted(() => {
     { threshold: 0.5 },
   )
   ob.observe(dom.value!)
+  r = dom.value?.scrollLeft ?? 0
+  if (dom.value!.scrollWidth <= dom.value!.clientWidth) {
+    return
+  }
+  dom.value!.addEventListener('wheel', WhEvent, { passive: false })
+})
+window.addEventListener('resize', () => {
+  if (dom.value!.scrollWidth <= dom.value!.clientWidth) {
+    dom.value!.removeEventListener('wheel', WhEvent)
+    return
+  }
+  dom.value!.removeEventListener('wheel', WhEvent)
+  dom.value!.addEventListener('wheel', WhEvent, { passive: false })
 })
 </script>
 <template>

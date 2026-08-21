@@ -15,3 +15,27 @@ export interface Contact {
   bc: string
   url: string
 }
+export interface SaiRenMusic {
+  cid: string
+  name: string
+  albumCid: string
+  sourceUrl: string
+  lyricUrl: string
+  mvUrl: string
+  mvCoverUrl: string
+  artists: string[]
+}
+
+export interface SaiRenalbum {
+  cid: string
+  name: string
+  intro: string
+  belong: string
+  coverUrl: string
+  coverDeUrl: string
+  songs: {
+    cid: string
+    name: string
+    artistes: string[]
+  }[]
+}

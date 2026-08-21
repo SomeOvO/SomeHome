@@ -113,6 +113,8 @@ p {
 .links {
   margin-top: auto;
   display: flex;
+  justify-content: start;
+  align-items: center;
   a {
     text-decoration: none;
     color: #000;

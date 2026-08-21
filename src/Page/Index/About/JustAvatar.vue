@@ -47,7 +47,7 @@ const Ani = () => {
 
 <style scoped>
 .Cover {
-  width: 15rem;
+  width: max(10dvw, 20dvh);
   position: relative;
   overflow: hidden;
   background-color: transparent;
