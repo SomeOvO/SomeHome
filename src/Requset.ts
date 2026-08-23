@@ -12,3 +12,7 @@ export const Get_Music_album = async (id: string) => {
   const data = fetch('https://b.sakurasen.cn/api/myapi/v1/sairen/album?id=' + id)
   return (await data).json()
 }
+
+export const Get_Blog_List = async () => {
+  return fetch('https://my-blog-sage-phi.vercel.app/rss.xml')
+}

@@ -11,6 +11,8 @@ import MyBlogs from './MyBlogs.vue'
 
 <style scoped>
 .IndexBlog {
+  width: 100%;
+  min-width: 10rem;
   display: flex;
   align-items: center;
   flex-direction: column;

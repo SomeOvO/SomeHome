@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import IndexBanner from '@/Page/Index/IndexBanner.vue'
 import IndexAbout from '@/Page/Index/About/IndexAboutMe.vue'
-import TopBar from '@/components/TopBar.vue'
 import IndexProjects from './ProJects/IndexProjects.vue'
 import { onMounted, useTemplateRef } from 'vue'
 import gsap from 'gsap'
@@ -35,7 +34,6 @@ onMounted(() => {
 </script>
 
 <template>
-  <TopBar />
   <div class="page index">
     <IndexBanner />
     <div class="Solo" ref="TapText">
@@ -44,7 +42,6 @@ onMounted(() => {
     <div class="More" ref="more">
       <IndexAbout />
       <IndexProjects />
-      <IndexMusic />
       <IndexBlog />
     </div>
     <div class="Solo" ref="contact" style="opacity: 1">

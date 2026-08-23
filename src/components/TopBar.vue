@@ -54,8 +54,10 @@ onMounted(() => {
 
     <div class="Topbar" ref="TopBar">
       <div class="Contents">
-        <h1>SomeOvO</h1>
+        <h1 @click="$router.push('/')">SomeOvO</h1>
         <div class="Buttons">
+          <span>我的博客</span>
+          <span @click="$router.push('/friends')">友情链接</span>
           <span><SoundControl /></span>
         </div>
       </div>
@@ -65,7 +67,7 @@ onMounted(() => {
 
 <style scoped>
 * {
-  --height: 3rem;
+  --height: 2.8rem;
 }
 .IndexTopbar {
   display: flex;

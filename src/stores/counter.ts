@@ -57,6 +57,6 @@ export const useCounterStore = defineStore('counter', () => {
     }
   }
   const PublicPlay = CreateAudioPipe(3)
-
-  return { SoundControl, sound, PublicPlay, CreateAudioPipe }
+  const FirendsIsPlay = ref(false)
+  return { SoundControl, sound, PublicPlay, CreateAudioPipe, FirendsIsPlay }
 })

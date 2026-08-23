@@ -39,3 +39,10 @@ export interface SaiRenalbum {
     artistes: string[]
   }[]
 }
+
+export type ViewInfo = {
+  name: string
+  bio: string
+  avat: string
+  bg: string
+}
