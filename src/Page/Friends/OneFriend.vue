@@ -26,12 +26,12 @@ onMounted(() => {
     .then(() => {
       if (!loadErr.value) {
         gsap.to(root.value, {
-          boxShadow: '#59eb89 0 0 7px',
+          boxShadow: '#59eb89 0 0 12px',
           direction: 1,
         })
       } else {
         gsap.to(root.value, {
-          boxShadow: '#ff7b7b 0 0 7px',
+          boxShadow: '#ff7b7b 0 0 12px',
           direction: 1,
         })
       }
@@ -44,7 +44,7 @@ onMounted(() => {
 function LoadErr() {
   loadErr.value = true
   gsap.to(root.value, {
-    boxShadow: '#ff7b7b 0 0 7px',
+    boxShadow: '#ff7b7b 0 0 12px',
     direction: 1,
   })
 }

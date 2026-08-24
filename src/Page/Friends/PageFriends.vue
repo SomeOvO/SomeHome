@@ -73,6 +73,7 @@ onMounted(() => {
 
 <style scoped>
 .friends {
+  margin-top: 1rem;
   display: flex;
   padding: 1rem 0.5rem;
   box-sizing: border-box;
