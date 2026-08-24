@@ -85,6 +85,9 @@ onMounted(() => {
   dom.value!.addEventListener('wheel', WhEvent, { passive: false })
 })
 window.addEventListener('resize', () => {
+  if (!dom.value) {
+    return
+  }
   if (dom.value!.scrollWidth <= dom.value!.clientWidth) {
     dom.value!.removeEventListener('wheel', WhEvent)
     return

@@ -25,12 +25,12 @@ async function View() {
   ).call(() => {
     isView.value = true
     NowView.value.avat = prop.view.avat
-    NowView.value.bg = prop.view.bg
     NowView.value.name = prop.view.name
     NowView.value.bio = prop.view.bio
+    NowView.value.url = prop.view.url
     tl.add(
       gsap.to(DomRoot.value, {
-        backgroundImage: `url(${NowView.value.bg})`,
+        backgroundImage: `url(${NowView.value.avat})`,
       }),
     )
     tl.add(
@@ -40,7 +40,20 @@ async function View() {
     )
   })
 
-  tl.then().then(() => (counter.FirendsIsPlay = false))
+  tl.then().then(() => {
+    counter.FirendsIsPlay = false
+    GoTO(NowView.value.url)
+  })
+}
+
+function GoTO(url: string) {
+  if (url.slice(0, 4) != 'http') {
+    url = 'https://' + url
+  }
+  const a = document.createElement('a')
+  a.href = url
+  a.target = '_blank'
+  a.click()
 }
 
 watch(prop, () => {
@@ -54,9 +67,16 @@ watch(prop, () => {
 
 <template>
   <div class="FriendsBanner" ref="Root">
-    <div class="Cover" ref="Cover"></div>
+    <div class="Cover" ref="Cover">
+      <h1>正在前往{{ prop.view.name }}</h1>
+    </div>
     <div class="Info" v-if="!isView">
       <h1>友情链接</h1>
+      <div class="control">
+        <span>申请</span>
+
+        <span>联系</span>
+      </div>
     </div>
     <div class="View" v-if="isView">
       <h1>{{ NowView.name }}</h1>
@@ -66,6 +86,28 @@ watch(prop, () => {
 </template>
 
 <style scoped>
+.Info {
+  h1 {
+    font-size: 2rem;
+  }
+}
+.control {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+}
+.view {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+}
 .View {
   display: flex;
   justify-content: center;
@@ -80,6 +122,9 @@ watch(prop, () => {
 }
 
 .Cover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 2;
   position: absolute;
   left: 0;
@@ -87,9 +132,13 @@ watch(prop, () => {
   background-color: #252525;
   width: 0%;
   height: 100%;
+  overflow: hidden;
+  h1 {
+    white-space: pre;
+  }
 }
 .FriendsBanner {
-  background-color: #7e7e7e;
+  background-color: #353535;
   overflow: hidden;
   position: relative;
   padding-top: 2.5rem;
@@ -97,10 +146,11 @@ watch(prop, () => {
   justify-content: center;
   height: 30dvh;
   align-items: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center center;
+  background-size: 20dvw;
+  background-repeat: repeat;
+  background-position: center center;
   color: #fff;
   flex-direction: column;
+  box-shadow: #252525 0 2px 12px;
 }
 </style>

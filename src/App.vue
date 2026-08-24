@@ -1,9 +1,12 @@
 <script setup lang="ts">
+// import PublicMuisc from './components/PublicComponenets/Music/PublicMuisc.vue'
 import TopBar from './components/TopBar.vue'
 </script>
 
 <template>
   <TopBar />
+
+  <!-- <PublicMuisc /> -->
   <div class="mainView">
     <RouterView />
   </div>

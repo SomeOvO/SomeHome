@@ -44,5 +44,5 @@ export type ViewInfo = {
   name: string
   bio: string
   avat: string
-  bg: string
+  url: string
 }
