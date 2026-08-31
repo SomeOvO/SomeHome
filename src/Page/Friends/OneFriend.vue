@@ -121,6 +121,7 @@ function BoxOut() {
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: 100%;
   padding: 0 0.2rem;
 }
 
@@ -133,7 +134,8 @@ function BoxOut() {
   background-color: #fff;
   border-radius: 12px;
   display: flex;
-  height: 6rem;
+  height: 6.5rem;
+  box-sizing: border-box;
   cursor: pointer;
   overflow: hidden;
   width: 16rem;
@@ -145,7 +147,7 @@ function BoxOut() {
 
   p {
     margin: 0;
-    font-size: 85%;
+    font-size: 80%;
   }
 
   img {

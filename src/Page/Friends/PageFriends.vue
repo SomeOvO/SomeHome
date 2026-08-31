@@ -15,10 +15,10 @@ function Select(v: ViewInfo) {
 }
 const FriendsList = [
   {
-    avat: 'https://sakurasen.cn/imgs/avat.png',
-    bio: '无限进步',
-    name: 'SomeOvO',
-    url: 'https://3mua.cn',
+    avat: 'https://plankbevelen.cn/img/avatar.webp',
+    bio: '一个热爱技术的开发者，专注于有趣且实用的产品。在这里分享我的项目、想法和学习笔记',
+    name: 'plankbevelen',
+    url: 'https://plankbevelen.cn',
   },
   {
     name: 'Refactored',
@@ -59,7 +59,7 @@ onMounted(() => {
   NewList.push(...FriendsList)
   for (let i = 0; i < NewList.length; i++) {
     const j = Math.floor(Math.random() * NewList.length)
-    ;[NewList[i], NewList[j]] = [NewList[j]!, NewList[i]!]
+      ;[NewList[i], NewList[j]] = [NewList[j]!, NewList[i]!]
   }
   ViewList.value = NewList
 })

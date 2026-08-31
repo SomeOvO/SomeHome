@@ -7,7 +7,7 @@ const words = RandomWords
 <template>
   <div class="IndexBanner">
     <AniTitle -word="SomeOvO" :-size="10" :-time="3000" :-words="words" />
-    <AniTitle -word="请输入文本" :-size="6" :-time="3000" :-display="true" />
+    <AniTitle -word="无限进步" :-size="6" :-time="3000" :-display="true" />
   </div>
 </template>
 
