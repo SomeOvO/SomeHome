@@ -1,6 +1,7 @@
 <script setup lang="ts">
 // import PublicMuisc from './components/PublicComponenets/Music/PublicMuisc.vue'
 import TopBar from './components/TopBar.vue'
+
 </script>
 
 <template>
@@ -17,10 +18,12 @@ body {
   background-color: rgb(253, 253, 253);
   margin: 0;
 }
+
 .page {
   overflow: hidden;
   width: 100%;
 }
+
 .Model {
   flex: 1;
   background-color: rgb(255, 255, 255);

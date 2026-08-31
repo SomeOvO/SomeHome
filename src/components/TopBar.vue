@@ -47,6 +47,10 @@ const Ani = () => {
 onMounted(() => {
   Ani()
 })
+
+function Go(url: string) {
+  window.location.href = url
+}
 </script>
 <template>
   <div class="IndexTopbar">
@@ -56,9 +60,11 @@ onMounted(() => {
       <div class="Contents">
         <h1 @click="$router.push('/')">SomeOvO</h1>
         <div class="Buttons">
-          <span>我的博客</span>
+          <span @click="Go('https://blog.3mua.cn/')">我的博客</span>
           <span @click="$router.push('/friends')">友情链接</span>
-          <span><SoundControl /></span>
+          <span>
+            <SoundControl />
+          </span>
         </div>
       </div>
     </div>
@@ -69,6 +75,7 @@ onMounted(() => {
 * {
   --height: 2.8rem;
 }
+
 .IndexTopbar {
   display: flex;
   justify-content: center;
@@ -91,6 +98,7 @@ onMounted(() => {
   z-index: 1;
   position: relative;
 }
+
 .Topbar {
   z-index: 2;
   top: 0;
@@ -100,20 +108,28 @@ onMounted(() => {
   height: var(--height);
   box-sizing: border-box;
   position: absolute;
+
   .Contents {
     height: 100%;
     opacity: 0;
     display: flex;
     width: 100%;
+
     h1 {
       margin: 0;
       font-size: 100%;
+      cursor: pointer;
     }
+
     .Buttons {
       display: flex;
       gap: 1rem;
       margin-left: auto;
       margin-right: 0.5rem;
+
+      span {
+        cursor: pointer;
+      }
     }
   }
 }

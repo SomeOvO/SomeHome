@@ -51,15 +51,15 @@ const tips = () => {
     <h2>{{ Data.name }}</h2>
     <p>{{ Data.desc }}</p>
     <div class="Github">
-      <img src="/icon/star.svg" alt="" />
+      <img src="/icon/star.svg" draggable="false" alt="" />
       <i v-if="Data.loaded">{{ Data.star }}</i>
-      <img src="/icon/loading.svg" alt="" class="loading" v-if="!Data.loaded" />
-      <img src="/icon/fork.svg" alt="" />
+      <img src="/icon/loading.svg" alt="" draggable="false" class="loading" v-if="!Data.loaded" />
+      <img src="/icon/fork.svg" alt="" draggable="false" />
       <i v-if="Data.loaded">{{ Data.fork }}</i>
-      <img src="/icon/loading.svg" alt="" class="loading" v-if="!Data.loaded" />
+      <img src="/icon/loading.svg" alt="" draggable="false" class="loading" v-if="!Data.loaded" />
 
       <div class="notload" v-if="Data.star === '--' || Data.fork === '--'" @click="tips">
-        <img src="/icon/question-circle.svg" alt="无法连接至Github服务器" class="Notload" />
+        <img src="/icon/question-circle.svg" draggable="false" alt="无法连接至Github服务器" class="Notload" />
       </div>
     </div>
     <div class="links">
@@ -83,10 +83,12 @@ const tips = () => {
   width: 100%;
   height: 100%;
 }
+
 h2 {
   font-size: 110%;
   margin: 0;
 }
+
 p {
   margin: 0;
   position: relative;
@@ -95,50 +97,61 @@ p {
   white-space: pre;
   text-overflow: ellipsis;
 }
+
 .Github {
   margin: 0.5rem 0;
   display: flex;
   align-items: center;
+
   img {
     transform: translateY(1px);
     width: 1rem;
     user-select: none;
   }
+
   i {
     margin-left: 0.2rem;
     font-weight: bold;
     margin-right: 1rem;
   }
 }
+
 .links {
   margin-top: auto;
   display: flex;
   justify-content: start;
   align-items: center;
+
   a {
     text-decoration: none;
     color: #000;
     font-weight: bold;
   }
+
   gap: 0.5rem;
 }
+
 @keyframes loading {
   0% {
     transform: rotate(0);
   }
+
   100% {
     transform: rotate(360deg);
   }
 }
+
 .notload {
   position: relative;
   z-index: 2;
   cursor: pointer;
   display: flex;
 }
+
 .loading {
   animation: loading 1s ease-out infinite;
 }
+
 .Gayhub {
   height: 100%;
   position: absolute;
@@ -148,12 +161,14 @@ p {
   overflow: hidden;
   z-index: -1;
   z-index: 0;
+  pointer-events: none;
+
   img {
     pointer-events: none;
-
     height: 100%;
   }
 }
+
 .Project {
   border-radius: 4px;
   width: 14rem;

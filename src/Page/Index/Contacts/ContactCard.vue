@@ -34,6 +34,7 @@ function Open(url: string) {
   scroll-snap-align: center;
   background-color: var(--color);
   position: relative;
+
   .title {
     margin: 0;
     font-size: 2.3rem;
@@ -41,6 +42,7 @@ function Open(url: string) {
     text-shadow: #000000 0 0 3px;
     z-index: 2;
   }
+
   .name {
     transform: skew(10deg, 0deg);
     color: #494949;
@@ -51,11 +53,13 @@ function Open(url: string) {
     position: absolute;
     z-index: 0;
   }
+
   img {
     z-index: 1;
     opacity: 0.3;
     position: absolute;
     height: 100%;
+    user-select: none;
     left: 0;
     top: 0;
   }

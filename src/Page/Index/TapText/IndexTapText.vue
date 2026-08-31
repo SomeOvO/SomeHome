@@ -37,7 +37,6 @@ function Reduce(RandNum: number) {
       let rand = 0
       while (true) {
         rand = Math.floor(Math.random() * List.length)
-        console.log(rand, RandNum)
         if (List.length === 1 || !List) {
           break
         }
@@ -82,6 +81,7 @@ function Increase(RandNum: number) {
   justify-content: center;
   align-items: center;
   background-color: #000;
+
   h1 {
     font-size: clamp(0.8rem, 5vw, 5rem);
     padding: 1rem;

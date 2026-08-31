@@ -73,9 +73,7 @@ watch(prop, () => {
     <div class="Info" v-if="!isView">
       <h1>友情链接</h1>
       <div class="control">
-        <span>申请</span>
-
-        <span>联系</span>
+        <a href="https://blog.sakurasen.cn/post/friendlink/" target="_blank">联系/申请</a>
       </div>
     </div>
     <div class="View" v-if="isView">
@@ -88,26 +86,35 @@ watch(prop, () => {
 <style scoped>
 .Info {
   h1 {
-    font-size: 2rem;
+    font-size: 3rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: #88ffa6;
   }
 }
+
 .control {
   display: flex;
   justify-content: center;
   gap: 1rem;
   align-items: center;
 }
+
 .view {
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
+
   iframe {
     width: 100%;
     height: 100%;
   }
 }
+
 .View {
   display: flex;
   justify-content: center;
@@ -133,10 +140,12 @@ watch(prop, () => {
   width: 0%;
   height: 100%;
   overflow: hidden;
+
   h1 {
     white-space: pre;
   }
 }
+
 .FriendsBanner {
   background-color: #353535;
   overflow: hidden;

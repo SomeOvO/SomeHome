@@ -75,11 +75,7 @@ function Open(h: string) {
   <div class="MyblogsErr" v-if="IsErr">
     <p>无法获取到数据</p>
     <p>您可能无法访问至<strong>vercel</strong></p>
-    <i
-      >数据来源于Vercel镜像站，您可直接访问<a href="https://blog.3mua.cn" target="_blank"
-        >主站</a
-      ></i
-    >
+    <i>数据来源于Vercel镜像站，您可直接访问<a href="https://blog.3mua.cn" target="_blank">主站</a></i>
   </div>
 </template>
 
@@ -93,14 +89,17 @@ function Open(h: string) {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   a {
     text-decoration: none;
     color: #373944;
   }
+
   p {
     margin: 0;
   }
 }
+
 .Myblogs {
   display: flex;
   flex-wrap: wrap;
@@ -117,13 +116,25 @@ function Open(h: string) {
   opacity: 0;
   justify-content: center;
   align-items: center;
+  transition: 0.3s;
+  padding: 0.2rem 0.8rem;
+  box-sizing: border-box;
+  cursor: pointer;
+
   h2,
   p {
     margin: 0;
   }
+
   p {
     white-space: normal;
     word-break: break-all;
   }
+}
+
+.Blog:hover {
+  background-color: #373944;
+  color: #fff;
+  border-radius: 9px;
 }
 </style>
