@@ -153,6 +153,7 @@ function BoxOut() {
   img {
     position: relative;
     z-index: 1;
+    background-color: #fff;
     border-radius: 12px;
     height: 100%;
   }
