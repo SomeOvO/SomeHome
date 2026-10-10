@@ -36,12 +36,7 @@ const Ani = () => {
 
 <template>
   <div class="Cover" :style="{ '--width': '100%' }" ref="Cover">
-    <img
-      src="https://sakurasen.cn/imgs/avat.png"
-      alt=""
-      ref="Img"
-      style="transform: translateX(100%)"
-    />
+    <img src="https://3mua.cn/imgs/avat.png" alt="" ref="Img" style="transform: translateX(100%)" />
   </div>
 </template>
 
@@ -55,6 +50,7 @@ const Ani = () => {
   background-color: #dadada;
   display: flex;
 }
+
 .Cover::after {
   position: absolute;
   content: '';
@@ -65,6 +61,7 @@ const Ani = () => {
   height: 100%;
   box-shadow: #fff 0 0 8px;
 }
+
 img {
   width: 100%;
   position: relative;
