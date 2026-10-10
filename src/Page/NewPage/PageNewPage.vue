@@ -26,7 +26,7 @@ const timer = setInterval(() => {
   } else {
     move.Time.value--
   }
-}, 3000);
+}, 1000);
 
 </script>
 <template>
