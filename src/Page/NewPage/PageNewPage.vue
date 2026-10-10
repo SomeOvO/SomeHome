@@ -18,11 +18,13 @@ class MoveUrl {
 }
 
 const move = new MoveUrl()
-
+function Go() {
+  window.location.href = move.GetNew() ?? "https://3mua.cn"
+}
 const timer = setInterval(() => {
   if (move.Time.value == 0) {
     clearInterval(timer)
-    window.location.href = move.GetNew() ?? "https://3mua.cn"
+    Go()
   } else {
     move.Time.value--
   }
@@ -39,13 +41,13 @@ const timer = setInterval(() => {
       <div class="banner">
 
         <h2>您所访问的</h2>
-        <p class="url" href="">{{ move.GetOld() ?? "你到底从哪来" }}</p>
+        <p class="url">{{ move.GetOld() ?? "你到底从哪来" }}</p>
         <h2>将要被迁移至</h2>
-        <a class="tourl" href="">{{ move.GetNew() ?? "https://3mua.cn" }}</a>
+        <a class="tourl" :href="move.GetNew()">{{ move.GetNew() ?? "https://3mua.cn" }}</a>
         <p style="margin-top: 1rem;">只是将sakurasen换为3mua</p>
         <p style="margin-bottom: 1rem">{{ move.Time }}秒后将自动跳转</p>
 
-        <button class="jump">现在就去</button>
+        <button class="jump" @click="Go">现在就去</button>
       </div>
     </div>
   </div>
